@@ -69,28 +69,7 @@ namespace Calculator
 
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
-            uint selectedNumber = 0;
-
-            if (sender == zeroButton)
-                selectedNumber = 0;
-            if (sender == oneButton)
-                selectedNumber = 1;
-            if (sender == twoButton)
-                selectedNumber = 2;
-            if (sender == threeButton)
-                selectedNumber = 3;
-            if (sender == fourButton)
-                selectedNumber = 4;
-            if (sender == fiveButton)
-                selectedNumber = 5;
-            if (sender == sixButton)
-                selectedNumber = 6;
-            if (sender == sevenButton)
-                selectedNumber = 7;
-            if (sender == eightButton)
-                selectedNumber = 8;
-            if (sender == nineButton)
-                selectedNumber = 9;
+            uint selectedNumber = uint.Parse((sender as Button).Content.ToString());
 
             if (resultLabel.Content.ToString() == "0")
             {
