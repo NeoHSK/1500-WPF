@@ -20,11 +20,39 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        double lastNumber;
         public MainWindow()
         {
             InitializeComponent();
 
-            resultLabel.Content = "1234";
+            acButton.Click += acButtom_Click;
+            negativeButton.Click += negativeButton_Click;
+            percentageButton.Click += PercentageButton_Click;
+            equalButton.Click += EqualButton_Click;
+        }
+
+        private void EqualButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void PercentageButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+                lastNumber %= 100;
+                resultLabel.Content = lastNumber.ToString();
+            }
+        }
+
+        private void acButtom_Click(object sender, RoutedEventArgs e)
+        {
+            resultLabel.Content = "0";
+        }
+        
+        private void negativeButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void sevenButton_Click(object sender, RoutedEventArgs e)
@@ -38,6 +66,7 @@ namespace Calculator
                 resultLabel.Content = $"{resultLabel.Content}7";
             }
         }
+    
     }
        
 }
