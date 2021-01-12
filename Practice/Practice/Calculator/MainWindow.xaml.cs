@@ -52,18 +52,53 @@ namespace Calculator
         
         private void negativeButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+                lastNumber *= -1;
+                resultLabel.Content = lastNumber.ToString();
+            }
         }
 
-        private void sevenButton_Click(object sender, RoutedEventArgs e)
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
         {
-            if(resultLabel.Content.ToString() == "0")
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
             {
-                resultLabel.Content = "7";
+                resultLabel.Content = "0";
+            }
+        }
+
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
+        {
+            uint selectedNumber = 0;
+
+            if (sender == zeroButton)
+                selectedNumber = 0;
+            if (sender == oneButton)
+                selectedNumber = 1;
+            if (sender == twoButton)
+                selectedNumber = 2;
+            if (sender == threeButton)
+                selectedNumber = 3;
+            if (sender == fourButton)
+                selectedNumber = 4;
+            if (sender == fiveButton)
+                selectedNumber = 5;
+            if (sender == sixButton)
+                selectedNumber = 6;
+            if (sender == sevenButton)
+                selectedNumber = 7;
+            if (sender == eightButton)
+                selectedNumber = 8;
+            if (sender == nineButton)
+                selectedNumber = 9;
+
+            if (resultLabel.Content.ToString() == "0")
+            {
+                resultLabel.Content = $"{selectedNumber}";
             }
             else
             {
-                resultLabel.Content = $"{resultLabel.Content}7";
+                resultLabel.Content = $"{resultLabel.Content}{selectedNumber}";
             }
         }
     
