@@ -24,7 +24,7 @@ namespace Contacts
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
