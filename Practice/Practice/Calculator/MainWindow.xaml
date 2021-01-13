@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="525" Width="350">
+    <Window.Resources>
+        <SolidColorBrush x:Key="numberColor" Color="#666666"/>
+        <SolidColorBrush x:Key="operatorColor" Color="Green"/>
+    </Window.Resources>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -31,27 +35,21 @@
         <!--Row 1-->
         <Button x:Name="acButton"
                 Content="AC"
-                Background="#444444"
-                Foreground="White"
                 Grid.Row="1"
                 Margin="5"/>
         <Button x:Name="negativeButton"
                 Content="+/-"
-                Background="#444444"
-                Foreground="White"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="5"/>
         <Button x:Name="percentageButton"
                 Content="%"
-                Background="#444444"
-                Foreground="White"
                 Grid.Row="1"
                 Grid.Column="2"
                 Margin="5"/>
         <Button x:Name="divisionButton"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="White"
                 Content="/"
                 Grid.Row="1"
@@ -60,14 +58,14 @@
         <!--Row 2-->
         <Button x:Name="sevenButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="7"
                 Grid.Row="2"
                 Margin="5"/>
         <Button x:Name="eightButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="8"
                 Grid.Row="2"
@@ -75,7 +73,7 @@
                 Margin="5"/>
         <Button x:Name="nineButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="9"
                 Grid.Row="2"
@@ -83,7 +81,7 @@
                 Margin="5"/>
         <Button x:Name="multiplicationButton"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="White"
                 Content="*"
                 Grid.Row="2"
@@ -92,14 +90,14 @@
         <!--Row 3-->
         <Button x:Name="fourButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="4"
                 Grid.Row="3"
                 Margin="5"/>
         <Button x:Name="fiveButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="5"
                 Grid.Row="3"
@@ -107,7 +105,7 @@
                 Margin="5"/>
         <Button x:Name="sixButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="6"
                 Grid.Row="3"
@@ -115,7 +113,7 @@
                 Margin="5"/>
         <Button x:Name="minusButton"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="White"
                 Content="-"
                 Grid.Row="3"
@@ -124,14 +122,14 @@
         <!--Row 4-->
         <Button x:Name="oneButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="1"
                 Grid.Row="4"
                 Margin="5"/>
         <Button x:Name="twoButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="2"
                 Grid.Row="4"
@@ -139,7 +137,7 @@
                 Margin="5"/>
         <Button x:Name="threeButton"
                 Click="NumberButton_Click"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Content="3"
                 Grid.Row="4"
@@ -147,7 +145,7 @@
                 Margin="5"/>
         <Button x:Name="plusButton"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="White"
                 Content="+"
                 Grid.Row="4"
@@ -157,21 +155,21 @@
         <Button x:Name="zeroButton"
                 Click="NumberButton_Click"
                 Content="0"
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Grid.ColumnSpan="2"
                 Grid.Row="5"
                 Margin="5"/>
         <Button x:Name="pointButton"
                 Content="."
-                Background="#444444"
+                Background="{StaticResource numberColor}"
                 Foreground="White"
                 Grid.Row="5"
                 Grid.Column="2"
                 Margin="5"/>
         <Button x:Name="equalButton"
                 Content="="
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="White"
                  Grid.Row="5"
                 Grid.Column="3"
