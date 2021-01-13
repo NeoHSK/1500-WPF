@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:Calculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Overlay numberColor-->
+        <SolidColorBrush x:Key="numberColor" Color="AliceBlue"/>
+        <SolidColorBrush x:Key="operatorsColor" Color="BlueViolet"/>
+        <SolidColorBrush x:Key="foregroundColor" Color="AntiqueWhite"/>
     </Application.Resources>
 </Application>
