@@ -5,8 +5,18 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <!-- Overlay numberColor-->
-        <SolidColorBrush x:Key="numberColor" Color="AliceBlue"/>
-        <SolidColorBrush x:Key="operatorsColor" Color="BlueViolet"/>
-        <SolidColorBrush x:Key="foregroundColor" Color="AntiqueWhite"/>
+        <SolidColorBrush x:Key="numbersColor" Color="AliceBlue"/>
+        <SolidColorBrush x:Key="operatorsColor" Color="Crimson"/>
+        <SolidColorBrush x:Key="foregroundColor" Color="Black"/>
+
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="CadetBlue"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Background" Value="HotPink"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="70"/>
+        </Style>
     </Application.Resources>
 </Application>
