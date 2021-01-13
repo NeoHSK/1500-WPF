@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Contacts.Classes;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +32,18 @@ namespace Contacts
             NewContactWindow newContactWindow = new NewContactWindow();
 
             newContactWindow.ShowDialog();
+
+            readDatabase();
         }
+
+        private void readDatabase()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            {
+                connection.CreateTable<Contact>();
+                var contacts = connection.Table<Contact>().ToList();
+            }
+        }
+
     }
 }
