@@ -38,10 +38,17 @@ namespace Contacts
 
         private void readDatabase()
         {
+            List<Contact> contactList;
+
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
                 connection.CreateTable<Contact>();
-                var contacts = connection.Table<Contact>().ToList();
+                contactList = connection.Table<Contact>().ToList();
+            }
+
+            if(contactList != null)
+            {
+                contactsListView.ItemsSource = contactList.ToString();
             }
         }
 
