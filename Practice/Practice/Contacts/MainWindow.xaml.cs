@@ -50,7 +50,7 @@ namespace Contacts
 
             if(contactList != null)
             {
-                contactsListView.ItemsSource = contactList;//.ToString();
+                contactsListView.ItemsSource = contactList;
             }
         }
 

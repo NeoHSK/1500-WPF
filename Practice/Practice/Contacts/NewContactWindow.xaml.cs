@@ -38,6 +38,7 @@ namespace Contacts
                 connection.CreateTable<Contact>();
                 connection.Insert(contact);
             }
+
             Close();
         }
     }
