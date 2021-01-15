@@ -50,7 +50,20 @@ namespace Contacts
 
             if(contactList != null)
             {
+#if false
+
+                contactsListView.Items.Clear();
+                foreach (var contact in contactList)
+                {
+                    contactsListView.Items.Add(new ListViewItem()
+                    {
+                        Content = contact
+                    });
+                }
+#else
                 contactsListView.ItemsSource = contactList;
+#endif
+
             }
         }
 
@@ -68,6 +81,20 @@ namespace Contacts
             //contactsListView.ItemsSource = filteredList;
 
             contactsListView.ItemsSource = filteredListLinq;
+        }
+
+        private void contactsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Contact selectedContact = (Contact)contactsListView.SelectedItem;
+
+            if(selectedContact != null)
+            {
+                ContactDetailsWindow contactDetailsWindow = new ContactDetailsWindow(selectedContact);
+                contactDetailsWindow.ShowDialog();
+            }
+
+            readDatabase();
+
         }
     }
 }
