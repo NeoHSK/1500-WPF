@@ -58,9 +58,16 @@ namespace Contacts
         {
             TextBox searchTextBox = sender as TextBox;
 
-            var filteredList = contactList.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
+            //var filteredList = contactList.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
 
-            contactsListView.ItemsSource = filteredList;
+            var filteredListLinq = (from c in contactList
+                                    where c.Name.ToLower().Contains(searchTextBox.Text.ToLower())
+                                    orderby c.Email
+                                    select c).ToList();
+
+            //contactsListView.ItemsSource = filteredList;
+
+            contactsListView.ItemsSource = filteredListLinq;
         }
     }
 }
