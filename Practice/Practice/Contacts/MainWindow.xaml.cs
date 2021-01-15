@@ -22,6 +22,8 @@ namespace Contacts
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Contact> contactList;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,8 +42,6 @@ namespace Contacts
 
         private void readDatabase()
         {
-            List<Contact> contactList;
-
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
                 connection.CreateTable<Contact>();
@@ -54,5 +54,13 @@ namespace Contacts
             }
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox searchTextBox = sender as TextBox;
+
+            var filteredList = contactList.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
+
+            contactsListView.ItemsSource = filteredList;
+        }
     }
 }
