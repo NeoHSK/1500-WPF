@@ -23,6 +23,10 @@ namespace Contacts
         public ContactDetailsWindow(Contact selectedContact)
         {
             InitializeComponent();
+
+            Owner = Application.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
             mSelectedContact = selectedContact;
             nameTextBox.Text = mSelectedContact.Name;
             emailTextBox.Text = mSelectedContact.Email;

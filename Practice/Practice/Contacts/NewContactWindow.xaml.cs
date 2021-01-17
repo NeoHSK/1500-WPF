@@ -22,6 +22,10 @@ namespace Contacts
         public NewContactWindow()
         {
             InitializeComponent();
+
+            Owner = Application.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
