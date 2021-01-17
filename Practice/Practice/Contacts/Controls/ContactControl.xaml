@@ -9,7 +9,7 @@
     <Grid Background="#AAE5E5E5">
         <StackPanel Margin="5">
             <TextBlock x:Name="nameTextBlock"
-                        Text="NAme Lastname"
+                        Text="Name Lastname"
                         FontSize="20"
                         FontWeight="Bold"/>
             <TextBlock x:Name="emailTextBlock"
